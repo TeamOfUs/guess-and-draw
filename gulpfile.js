@@ -13,7 +13,7 @@ gulp.task('webserver', function () {
 
 gulp.task('watch', function () {
     gulp.watch('./views/*.html', ['html-reload'])
-    gulp.watch('./public/stylesheets/*.css', ['less','less-reload'])
+    gulp.watch('./public/stylesheets/*.less', ['less','less-reload'])
     gulp.watch('./public/scripts/*.js', ['webpack','js-reload'])
     gulp.watch('./public/scripts/*.jsx',['react','webpack','js-reload'])
 });
