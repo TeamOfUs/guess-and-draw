@@ -1,34 +1,40 @@
-var connect = require('gulp-connect'), // 本地服务器
+var connect = require('gulp-connect'),
     gulp = require('gulp'),
     less = require('gulp-less'),
     webpack = require('webpack'),
-    react = require('gulp-react'),
-    path = require('path');
-// 注册任务
+    babel = require('gulp-babel');
+
 gulp.task('webserver', function () {
     connect.server({
         root: './',
         livereload: true
     });
 });
-// 监听任务
-gulp.task('watch', function () {
-    gulp.watch('./views/*.html', ['reload'])
-    gulp.watch('./public/stylesheets/*.css', ['reload'])
-    gulp.watch('./public/scripts/*.js', ['reload', 'react', 'webpack'])
-});
 
-gulp.task('reload', function () {
-    gulp.src('./public')
+gulp.task('watch', function () {
+    gulp.watch('./views/*.html', ['html-reload'])
+    gulp.watch('./public/stylesheets/*.css', ['less','less-reload'])
+    gulp.watch('./public/scripts/*.js', ['webpack','js-reload'])
+    gulp.watch('./public/scripts/*.jsx',['react','webpack','js-reload'])
+});
+gulp.task('html-reload', function () {
+    gulp.src('./views/*.html')
         .pipe(connect.reload());
-    gulp.src('./view')
+});
+gulp.task('less-reload', function () {
+    gulp.src('./public/stylesheets/dist/*.less')
+        .pipe(connect.reload());
+});
+gulp.task('js-reload', function () {
+    gulp.src('./public/scripts/dist/*.js')
         .pipe(connect.reload());
 });
 gulp.task('react', function () {
-    return
-    gulp.src('./public/*.jsx')
-        .pipe(react())
-        .pipe(gulp.dest('./public/dist'));
+    gulp.src('./public/scripts/*.jsx')
+        .pipe(babel({
+            presets: ['es2015','react']
+        }))
+        .pipe(gulp.dest('./public/scripts/dist/'))
 });
 gulp.task('less', function () {
     return
@@ -38,12 +44,11 @@ gulp.task('less', function () {
     }))
     .pipe(gulp.dest('./public/stylesheets/dist'))
 });
-//webpack打包js
 gulp.task('webpack', function () {
     var config = {
-        entry: "./public/script/index-script.js",
+        entry: "./public/scripts/index-script.js",
         output: {
-            path: "./public/script/dist",
+            path: "./public/scripts/dist",
             filename: "main.js"
         }
     };
@@ -55,4 +60,4 @@ gulp.task('webpack', function () {
         }
     });
 });
-gulp.task('default', ['webserver', 'webpack', 'watch']);
+gulp.task('default', ['less','react','webpack','watch','webserver']);
