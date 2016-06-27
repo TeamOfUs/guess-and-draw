@@ -37,7 +37,6 @@ gulp.task('react', function () {
         .pipe(gulp.dest('./public/scripts/dist/'))
 });
 gulp.task('less', function () {
-    return
     gulp.src('./public/stylesheets/*.less')
     .pipe(less({
         path: './public/stylesheets/'
