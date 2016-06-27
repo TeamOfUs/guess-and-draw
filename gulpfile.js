@@ -1,8 +1,9 @@
 var connect = require('gulp-connect'), // 本地服务器
     gulp = require('gulp'),
-    nodemon = require('gulp-nodemon'),
-    webpack = require('webpack');
-
+    less = require('gulp-less'),
+    webpack = require('webpack'),
+    react = require('gulp-react'),
+    path = require('path');
 // 注册任务
 gulp.task('webserver', function () {
     connect.server({
@@ -10,12 +11,11 @@ gulp.task('webserver', function () {
         livereload: true
     });
 });
-
 // 监听任务
 gulp.task('watch', function () {
     gulp.watch('./views/*.html', ['reload'])
     gulp.watch('./public/stylesheets/*.css', ['reload'])
-    gulp.watch('./public/scripts/*.js', ['reload']) // 监听根目录下所有.html文件
+    gulp.watch('./public/scripts/*.js', ['reload', 'react', 'webpack'])
 });
 
 gulp.task('reload', function () {
@@ -24,27 +24,26 @@ gulp.task('reload', function () {
     gulp.src('./view')
         .pipe(connect.reload());
 });
-
-//node任务的自动化
-gulp.task('start', function () {
-    nodemon({
-            script: './server.js',
-            watch: ['./public/script/', './public/stylesheet/', './views'],
-            ext: 'html css js',
-            ignore: ['/public/script/main.js'],
-            env: {
-                'NODE_ENV': 'development'
-            }
-        })
-        .on('restart', 'webpack')
+gulp.task('react', function () {
+    return
+    gulp.src('./public/*.jsx')
+        .pipe(react())
+        .pipe(gulp.dest('./public/dist'));
 });
-
+gulp.task('less', function () {
+    return
+    gulp.src('./public/stylesheets/*.less')
+    .pipe(less({
+        path: './public/stylesheets/'
+    }))
+    .pipe(gulp.dest('./public/stylesheets/dist'))
+});
 //webpack打包js
 gulp.task('webpack', function () {
     var config = {
-        entry: "./public/script/script.js",
+        entry: "./public/script/index-script.js",
         output: {
-            path: "./public/script",
+            path: "./public/script/dist",
             filename: "main.js"
         }
     };
@@ -56,10 +55,4 @@ gulp.task('webpack', function () {
         }
     });
 });
-
-gulp.task('node-dev', function () {
-    console.log('node devlop');
-});
-// 默认任务
- gulp.task('default',['webserver','watch']);  //开发前端页面时候的task
-//gulp.task('default', ['node-dev', 'webpack', 'start']); //开发node时候的task
+gulp.task('default', ['webserver', 'webpack', 'watch']);
