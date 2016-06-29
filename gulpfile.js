@@ -6,7 +6,7 @@ var connect = require('gulp-connect'),
 
 gulp.task('webserver', function () {
     connect.server({
-        root: './views',
+        root: './',
         livereload: true
     });
 });
@@ -51,4 +51,4 @@ gulp.task('webpack', function () {
         }
     });
 });
-gulp.task('default', ['less','react','webpack','watch','webserver']);
+gulp.task('default', ['less','webpack','watch','webserver']);
