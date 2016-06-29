@@ -1,6 +1,27 @@
+<<<<<<< HEAD
 @nice-blue: #5B83AD;
 @light-blue: @nice-blue + #111;
 
 #header {
   color: @light-blue;
 }
+=======
+@base: #f938ab;
+
+.box-shadow(@style, @c) when (iscolor(@c)) {
+  -webkit-box-shadow: @style @c;
+  box-shadow:         @style @c;
+}
+.box-shadow(@style, @alpha: 50%) when (isnumber(@alpha)) {
+  .box-shadow(@style, rgba(0, 0, 0, @alpha));
+}
+.box {
+  color: saturate(@base, 5%);
+  border-color: lighten(@base, 30%);
+  div { .box-shadow(0 0 5px, 30%) }
+}
+.test {
+	color:red;
+
+}
+>>>>>>> 7511a042468f8cf15573a94717bd79caf4fcfd60
