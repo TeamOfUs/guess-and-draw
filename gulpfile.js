@@ -13,7 +13,7 @@ gulp.task('webserver', function () {
 
 gulp.task('watch', function () {
     gulp.watch('./views/*.html', ['html-reload'])
-    gulp.watch('./public/stylesheets/*.less', ['less','less-reload'])
+    gulp.watch('./public/stylesheets/*.css', ['less-reload'])
     gulp.watch('./public/scripts/*.js', ['webpack','js-reload'])
 });
 gulp.task('html-reload', function () {
@@ -21,7 +21,7 @@ gulp.task('html-reload', function () {
         .pipe(connect.reload());
 });
 gulp.task('less-reload', function () {
-    gulp.src('./public/stylesheets/dist/*.less')
+    gulp.src('./public/stylesheets/*.css')
         .pipe(connect.reload());
 });
 gulp.task('js-reload', function () {
