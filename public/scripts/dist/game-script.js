@@ -7558,17 +7558,14 @@
 	        this.ctx.closePath();
 	    }
 	    remoteStartDraw(x, y) {
-	        console.log('start');
 	        this.ctx.moveTo(x, y);
 	        this.ctx.beginPath();
 	    }
 	    remoteDraw(x, y) {
-	        console.log(x,'+',y);
 	        this.ctx.lineTo(x, y);
 	        this.ctx.stroke();
 	    }
 	    remoteEndDraw() {
-	        console.log('end');
 	        this.ctx.closePath();
 	    }
 	    addListener() {
