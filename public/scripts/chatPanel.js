@@ -1,5 +1,5 @@
 class chatPanel {
-    constructor(dom) {
+    constructor(dom,io) {
         this.el = dom;
         this.addListener();
     }
@@ -14,17 +14,18 @@ class chatPanel {
                 sendMsg(msg);
                 
                 break;
+            case 'nameTag':
+                //input里面加上id
+                break;
             default:
                 break;
         }
     }
     sendMsg(msg){
         //ws
-        
     }
     receiveMsg(){
         //ws
-        
         addMsg(msg);
     }
     addMsg(msg){
