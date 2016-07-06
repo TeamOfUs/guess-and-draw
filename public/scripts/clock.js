@@ -1,4 +1,6 @@
-class clock {
+const Component = require('./Component');
+
+class clock extends Component{
     constructor(dom) {
         this.el = dom;
         this.time = 60;

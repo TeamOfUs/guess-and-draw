@@ -1,7 +1,8 @@
-class toolBar {
-    constructor(dom,panel) {
+const Component = require('./Component');
+
+class toolBar extends Component{
+    constructor(dom) {
         this.el = dom;
-        this.panel = panel;
         this.addListener();
     }
     addListener() {

@@ -1,5 +1,8 @@
-class chatPanel {
+const Component = require('./Component');
+
+class chatPanel extends Component{
     constructor(dom) {
+        super();
         this.el = dom;
         this.addListener();
     }
