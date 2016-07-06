@@ -1,16 +1,18 @@
 {
-  "name": "bazinga",
+  "name": "GuessAndDraw",
   "version": "1.0.0",
-  "main": "gulpfile.js",
+  "main": "server.js",
   "dependencies": {
     "mime": "^1.3.4",
-    "socket.io": "^1.4.8"
+    "socket.io": "^1.4.8",
     "socket.io-client": "^1.4.8",
     "websocket": "^1.0.23"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.11.0",
+    "eslint": "^3.0.1",
+    "eslint-plugin-react": "^5.2.2",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-connect": "^4.1.0",
@@ -22,13 +24,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DickBlowUp/Boom.git"
+    "url": "git+https://github.com/TeamOfUs/GuessAndDraw.git"
   },
-  "author": "DickBlowUp",
-  "license": "ISC",
+  "author": "TeamOfUs",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/DickBlowUp/Boom/issues"
+    "url": "https://github.com/TeamOfUs/GuessAndDraw/issues"
   },
-  "homepage": "https://github.com/DickBlowUp/Boom#readme",
+  "homepage": "https://github.com/TeamOfUs/GuessAndDraw#readme",
   "description": ""
 }
