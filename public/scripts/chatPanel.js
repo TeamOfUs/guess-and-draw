@@ -12,7 +12,10 @@ class chatPanel {
             case 'button':
                 let msg = document.getElementById("").value;
                 sendMsg(msg);
-                
+
+                break;
+            case 'nameTag':
+                //input里面加上id
                 break;
             default:
                 break;
@@ -20,16 +23,14 @@ class chatPanel {
     }
     sendMsg(msg){
         //ws
-        
     }
     receiveMsg(){
         //ws
-        
         addMsg(msg);
     }
     addMsg(msg){
         let msg = document.createElement("");
-        
+
     }
 }
 

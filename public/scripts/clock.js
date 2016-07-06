@@ -3,12 +3,16 @@ class clock {
         this.el = dom;
         this.time = 60;
     }
+    set time (value){
+        this.el.innerHTML = value;
+    }
     start(){
         let timer = setInterval(handler,1000);
         return timer;
     }
-    end(){
-        
+    end(id){
+        clearInterval(id);
+
     }
     addTime(time){
         this.time += time;
@@ -18,7 +22,6 @@ class clock {
     }
     handler(){
         this.time -= 1;
-        this.el.nodeValue = this.time;
     }
 }
 

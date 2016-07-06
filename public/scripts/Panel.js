@@ -1,5 +1,8 @@
-class Panel {
-    constructor(dom, io) {
+const Component = require('./Component');
+
+class Panel extends Component{
+    constructor(dom) {
+        super();
         this.el = document.getElementById(dom);
         this.ctx = this.el.getContext('2d');
         this.x = 0;
@@ -9,7 +12,10 @@ class Panel {
         this.ctx.strokeStyle = 'black';
         this.ctx.lineWidth = 1;
         this.addListener();
-        this.io = io;
+
+        super.subscribe('receiveStartDraw',this.remoteStartDraw);
+        super.subscribe('receiveDraw',this.remoteDraw);
+        super.subscribe('receiveEndDraw',this.remoteEndDraw);
     }
     handleDown(e) {
         if (!this.drawer) {
@@ -20,14 +26,17 @@ class Panel {
         this.y = e.pageY - e.target.offsetTop;
         this.ctx.moveTo(this.x, this.y);
         this.ctx.beginPath();
-        this.io.startDraw();
+        super.broadcast('sendStartDraw',{
+            x:this.x,
+            y:this.y
+        });
     }
     handleUp(e) {
         if (!this.drawer) {
             return
         }
         this.stopDrawing();
-        this.io.endDraw();
+        super.broadcast('sendEndDraw');
     }
     handleMove(e) {
         if (!this.drawer) {
@@ -40,24 +49,24 @@ class Panel {
         this.y = Math.floor(e.pageY - e.target.offsetTop);
         this.ctx.lineTo(this.x, this.y);
         this.ctx.stroke();
-        this.io.sendDraw(this.x, this.y);
+        super.broadcast('sendDraw',{
+            x:this.x,
+            y:this.y
+        });
     }
     stopDrawing() {
         this.drawing = false;
         this.ctx.closePath();
     }
-    remoteStartDraw(x, y) {
-        console.log('start');
-        this.ctx.moveTo(x, y);
+    remoteStartDraw(data) {
+        this.ctx.moveTo(data.x, data.y);
         this.ctx.beginPath();
     }
-    remoteDraw(x, y) {
-        console.log(x,'+',y);
-        this.ctx.lineTo(x, y);
+    remoteDraw(data) {
+        this.ctx.lineTo(data.x, data.y);
         this.ctx.stroke();
     }
     remoteEndDraw() {
-        console.log('end');
         this.ctx.closePath();
     }
     addListener() {
@@ -74,3 +83,4 @@ class Panel {
 }
 
 module.exports = Panel;
+
