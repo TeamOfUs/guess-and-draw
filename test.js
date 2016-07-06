@@ -192,8 +192,7 @@
 	        controller.broadcast(topic,msg);
 	    }
 	    receive(topic,msg){
-	        this.topics[topic].call(this,msg);
-	        //神来之笔 有待考察。
+	        this.topics[topic](msg);
 	    }
 	}
 
@@ -216,6 +215,7 @@
 	        super.subscribe('sendStartDraw',this.startDraw);
 	        super.subscribe('sendDraw',this.sendDraw);
 	        super.subscribe('sendEndDraw',this.endDraw);
+
 	    }
 	    on(){
 	        this.io.on('welcome', function (data) {
@@ -228,7 +228,7 @@
 	            controller.broadcast('receiveDraw',data);
 	        });
 	        this.io.on('end', function (data) {
-	            controller.broadcast('receiveEndDraw',null);
+	            controller.broadcast('receivedEndDraw');
 	        });
 	    }
 	    startDraw(data){
@@ -245,9 +245,6 @@
 	    }
 	    endDraw(data) {
 	        this.io.emit('end');
-	    }
-	    receive(topic,msg){
-	        super.receive(topic,msg);
 	    }
 	}
 

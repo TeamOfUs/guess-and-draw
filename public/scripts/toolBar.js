@@ -1,7 +1,6 @@
 class toolBar {
-    constructor(dom,panel) {
+    constructor(dom,controller) {
         this.el = dom;
-        this.panel = panel;
         this.addListener();
     }
     addListener() {
@@ -16,7 +15,7 @@ class toolBar {
             case: 'green':
             case: 'black':
             case: 'white':
-                this.panel.setColor(id);
+                controller.broadcast('changeColor',targetClass);
                 break;
             case: '1x-width':
                 this.panel.setWidth(1);

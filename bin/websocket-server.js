@@ -7,7 +7,6 @@ io.on('connection', function (socket) {
         socket.to('room').emit('start', data);
     });
     socket.on('draw', function (data) {
-
         socket.to('room').emit('draw', data);
     });
     socket.on('end', function (data) {
