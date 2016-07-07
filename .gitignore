@@ -1,5 +1,5 @@
-.idea
-/node_modules
-/bower_components
-/gulpfile.js
-**/dist
+/.idea/
+/.tmp/
+/coverage/
+/dist/
+/node_modules/
