@@ -12,7 +12,15 @@ io.on('connection', function (socket) {
     socket.on('end', function (data) {
         socket.to('room').emit('end');
     });
-
+	socket.on('msg',function(data){
+		console.log(data);
+		if(data === 'correct'){
+			socket.emit('correct');
+		}else{
+			socket.to('room').emit('msg',data);
+		}
+	});
+	
 });
 
 io.listen(8081);
