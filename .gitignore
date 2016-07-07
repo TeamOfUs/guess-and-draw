@@ -1,8 +1,5 @@
 .idea
 /node_modules
 /bower_components
-<<<<<<< Updated upstream
 /gulpfile.js
 **/dist
-=======
->>>>>>> Stashed changes
