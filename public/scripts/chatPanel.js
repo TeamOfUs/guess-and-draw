@@ -33,11 +33,11 @@ class chatPanel extends Component{
     receiveMsg(msg){
 		let node = document.createElement('li');
 		node.innerHTML = msg;
-		this.dom.children[0].appendChild(node);
+		this.el.children[0].appendChild(node);
 	}
     correct(){
 		let node = document.createElement('li').innerHTML = "Bingo！";
-		this.el.childNodes[0].appendChild(node);
+		this.el.children[0].appendChild(node);
 		alert('correct')
 	}
 }

@@ -53,3 +53,4 @@ gulp.task('webpack', function (cb) {
     });
     cb();
 });
+gulp.task('default', [ 'webpack', 'watch','webserver']);
