@@ -10,7 +10,7 @@ class NameBar extends Component {
     super.subscribe('newWord', this.getWord);
   }
   set word(word) {
-    this.el.innerText = word;
+    this.el.innerHTML = word;
   }
   addListenner() {
     this.el.children[1].addEventListener('click', event => this.clickHandler);
@@ -21,7 +21,6 @@ class NameBar extends Component {
   getWord(word){
     this.word = word;
   }
-
 }
 
-module.exports = clock;
+module.exports = NameBar;

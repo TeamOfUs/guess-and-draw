@@ -5,7 +5,6 @@ class ChatPanel extends Component{
         super();
         this.el = document.getElementById(dom);
         this.addListener();
-
         super.subscribe('receiveMsg',this.receiveMsg);
 		super.subscribe('correct',this.correct);
     }
@@ -20,7 +19,7 @@ class ChatPanel extends Component{
                 this.sendMsg(msg);
                 break;
             case 'nameTag':
-                //input里面加上id
+                this.el.children[1].value = e.target.nodeValue;
                 break;
             default:
                 break;
@@ -39,7 +38,6 @@ class ChatPanel extends Component{
 		let node = document.createElement('li');
         node.innerText = "Bingo!";
 		this.el.children[0].appendChild(node);
-		alert('correct');
 	}
 }
 

@@ -3,7 +3,9 @@ var connect = require('gulp-connect'),
     less = require('gulp-less'),
     gutil = require('gulp-util'),
     webpack = require('webpack');
-
+//gulp-uglify
+//gulp-minify-css
+//gulp-imagemin
 gulp.task('webserver', function () {
     connect.server({
         root: './',

@@ -5,9 +5,8 @@ const Component = require('./Component'),
 class PlayersPanel extends Component {
   constructor(dom) {
     super();
-    this.el = document.getElementById('players');
+    this.el = document.getElementById(dom);
     this.getPlayers();
-
   }
   getPlayers() {
     var xhr = new XMLHttpRequest();

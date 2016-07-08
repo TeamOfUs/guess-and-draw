@@ -29,7 +29,7 @@ class Panel extends Component {
     this.y = e.pageY - e.target.offsetTop;
     this.ctx.moveTo(this.x, this.y);
     this.ctx.beginPath();
-    super.broadcast('start', {
+    super.broadcast('startDraw', {
       x: this.x,
       y: this.y
     });
@@ -39,7 +39,7 @@ class Panel extends Component {
       return
     }
     this.stopDrawing();
-    super.broadcast('end');
+    super.broadcast('endDraw');
   }
   handleMove(e) {
     if (!this.drawer) {

@@ -6,6 +6,9 @@ class Clock extends Component {
     this.el = document.getElementById('clock');
     this.time = 60;
     this.timerId = null;
+
+    super.subscribe('newRound', this.reset);
+
   }
   set time(value) {
     this.el.innerHTML = value;
