@@ -1,19 +1,44 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
-    <meta charset="UTF-8">
-    <title>你画我猜</title>
-    <style>
-        canvas{
-            width: 800px;
-            height: 600px;
-            border: 1px solid black;
-            margin: 100px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>你画我猜</title>
+  <style>
+    canvas {
+      width: 800px;
+      height: 600px;
+      border: 1px solid black;
+      margin: 100px;
+    }
+
+    button {
+      width: 30px;
+      height: 30px;
+      background-color: red;
+    }
+  </style>
 </head>
+
 <body>
-    <canvas id="panel" width='800px' height='600px'>NO CANVAS</canvas>
-    <script src="../public/scripts/dist/game-script.js"></script>
+  <div id="chatPanel">
+    <ul id="chat">
+      <li>test</li>
+    </ul>
+    <button id='sub'>sub</button>
+    <input id='text' type="text">
+  </div>
+
+  <canvas id="panel" width='800px' height='600x'>NO CANVAS</canvas>
+
+  <div id="toolBar">
+    <button id="red"></button>
+    <button id="1x-width"></button>
+    <button id="32x-width"></button>
+
+  </div>
+  <script src="../public/scripts/dist/game-script.js"></script>
+
 </body>
+
 </html>

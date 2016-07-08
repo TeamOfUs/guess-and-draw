@@ -1,0 +1,39 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 0;
+  min-width: 1500px;
+}
+
+div {
+  border: 1px solid black;
+}
+
+#players,
+#panel,
+#chatPanel {
+  display: inline-block;
+}
+
+#players {
+  height: 100%;
+    min-width: 300px;
+  width: 20%;
+
+}
+#panel{
+  height: 100%;
+  min-width: 800px;
+}
+#chatPanel{
+  height:100%;
+  min-width: 300px;
+  width: 20%;
+
+}
