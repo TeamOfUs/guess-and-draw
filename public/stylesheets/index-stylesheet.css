@@ -3,16 +3,18 @@
   padding: 0;
 }
 
-html,
-body {
-  height: 100%;
+html,body {
+	min-height: 500px;
+	min-width: 800px;
+	height: 100%;
 }
 
 .display {
-  background-color: yellow;
-  height: 100%;
-  width: 10%;
-  float: left;
+
+	background-color:yellow;
+  	height: 100%;
+ 	width: 10%;
+ 	float: left;
 }
 
 .infor {
@@ -48,11 +50,13 @@ body {
 }
 
 .canvas {
-  position: relative;
-  background-color: red;
-  height: 100%;
-  width: 70%;
-  float: left;
+
+	position: relative;
+	background-color: red;
+	height: 100%;
+	width: 70%;
+	float: left;
+
 }
 
 .canvas-title {
@@ -85,10 +89,12 @@ body {
 }
 
 .chat {
-  background-color: green;
-  height: 100%;
-  width: 20%;
-  float: left;
+
+	background-color: green;
+	height: 100%;
+	width: 20%;
+	float: left;
+
 }
 
 .button-type {
