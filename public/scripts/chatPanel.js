@@ -1,6 +1,6 @@
 const Component = require('./Component');
 
-class chatPanel extends Component{
+class ChatPanel extends Component{
     constructor(dom) {
         super();
         this.el = document.getElementById(dom);
@@ -14,7 +14,6 @@ class chatPanel extends Component{
     }
     clickHandler(e) {
         let tagName = e.target.tagName;
-		console.log(tagName);
         switch(tagName){
             case 'BUTTON':
                 let msg = document.getElementById("text").value;
@@ -28,18 +27,20 @@ class chatPanel extends Component{
         }
     }
     sendMsg(msg){
-		super.broadcast('sendMsg',msg);
+		super.broadcast('msg',msg);
 	}
     receiveMsg(msg){
 		let node = document.createElement('li');
+        node.classList.add();
 		node.innerHTML = msg;
 		this.el.children[0].appendChild(node);
 	}
     correct(){
-		let node = document.createElement('li').innerHTML = "Bingo！";
+		let node = document.createElement('li');
+        node.innerText = "Bingo!";
 		this.el.children[0].appendChild(node);
-		alert('correct')
+		alert('correct');
 	}
 }
 
-module.exports = chatPanel;
+module.exports = ChatPanel;
