@@ -1,13 +1,26 @@
 (function (window) {
-    const Controller = require('./Controller'),
-          Panel = require('./Panel'),
-          Socket = require('./Socket');
+  const Audio = require('./Audio'),
+    Clock = require('./Clock'),
+    ChatPanel = require('./ChatPanel'),
+    Controller = require('./Controller'),
+    NameBar = require('./NameBar'),
+    Panel = require('./Panel'),
+    PlayersPanel = require('./PlayersPanel'),
+    Socket = require('./Socket'),
+    ToolBar = require('./ToolBar');
 
-    window.controller = new Controller();
 
-    let  panel = new Panel('panel'),
-         socket = new Socket();
+  window.controller = new Controller();
 
-    //todo list
-    //    在Canvas的外层监听moouseup ,触发panel的mouseup
+//  new Audio();
+//  new Clock('clock');
+  new ChatPanel('chatPanel');
+//  new NameBar();
+  new Panel('panel');
+  new PlayersPanel();
+  new Socket();
+  new ToolBar('toolBar');
+
+  //todo list --
+  //    在Canvas的外层监听moouseup ;触发panel的mouseup
 })(window)

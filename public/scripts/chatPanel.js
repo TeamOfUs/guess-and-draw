@@ -1,40 +1,44 @@
 const Component = require('./Component');
 
-class chatPanel extends Component{
+class ChatPanel extends Component{
     constructor(dom) {
         super();
-        this.el = dom;
+        this.el = document.getElementById(dom);
         this.addListener();
+        super.subscribe('receiveMsg',this.receiveMsg);
+		super.subscribe('correct',this.correct);
     }
     addListener() {
-        this.el.addEventListener('click', event => this.clickHandler(event));
+        this.el.addEventListener('click', (event) => this.clickHandler(event));
     }
     clickHandler(e) {
         let tagName = e.target.tagName;
         switch(tagName){
-            case 'button':
-                let msg = document.getElementById("").value;
-                sendMsg(msg);
-
+            case 'BUTTON':
+                let msg = document.getElementById("text").value;
+                this.sendMsg(msg);
                 break;
             case 'nameTag':
-                //input里面加上id
+                this.el.children[1].value = e.target.nodeValue;
                 break;
             default:
                 break;
         }
     }
     sendMsg(msg){
-        //ws
-    }
-    receiveMsg(){
-        //ws
-        addMsg(msg);
-    }
-    addMsg(msg){
-        let msg = document.createElement("");
-
-    }
+		super.broadcast('msg',msg);
+	}
+    receiveMsg(msg){
+		let node = document.createElement('li');
+        node.classList.add();
+		node.innerHTML = msg;
+		this.el.children[0].appendChild(node);
+	}
+    correct(){
+		let node = document.createElement('li');
+        node.innerText = "Bingo!";
+		this.el.children[0].appendChild(node);
+	}
 }
 
-module.exports = chatPanel;
+module.exports = ChatPanel;

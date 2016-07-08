@@ -1,8 +1,11 @@
 var connect = require('gulp-connect'),
     gulp = require('gulp'),
     less = require('gulp-less'),
-    gutil = require('gulp-util');
+    gutil = require('gulp-util'),
     webpack = require('webpack');
+//gulp-uglify
+//gulp-minify-css
+//gulp-imagemin
 
 gulp.task('webserver', function () {
     connect.server({
@@ -28,13 +31,14 @@ gulp.task('js-reload', ['webpack'],function () {
     gulp.src('./public/scripts/dist/*.js')
         .pipe(connect.reload());
 });
-gulp.task('less', function (cb) {
+
+gulp.task('less', function () {
+    return
     gulp.src('./public/stylesheets/*.less')
     .pipe(less({
         path: './public/stylesheets/'
     }))
     .pipe(gulp.dest('./public/stylesheets/dist'));
-    cb();
 });
 gulp.task('webpack', function (cb) {
     var config = {
@@ -48,9 +52,9 @@ gulp.task('webpack', function (cb) {
         if (err) {
             gutil.log(err);
         } else {
-            gutil.log(stats.toString());
+            gutil.log(stats.toString())
+            cb();
         }
     });
-    cb();
 });
-gulp.task('default', ['less','webpack','watch','webserver']);
+gulp.task('default', [ 'webpack', 'watch','webserver']);

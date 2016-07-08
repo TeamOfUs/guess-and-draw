@@ -1,30 +1,34 @@
 const Component = require('./Component');
 
-class clock extends Component{
-    constructor(dom) {
-        this.el = dom;
-        this.time = 60;
-    }
-    set time (value){
-        this.el.innerHTML = value;
-    }
-    start(){
-        let timer = setInterval(handler,1000);
-        return timer;
-    }
-    end(id){
-        clearInterval(id);
+class Clock extends Component {
+  constructor(dom) {
+    super();
+    this.el = document.getElementById('clock');
+    this.time = 60;
+    this.timerId = null;
 
-    }
-    addTime(time){
-        this.time += time;
-    }
-    reset(){
-        this.time = 60;
-    }
-    handler(){
-        this.time -= 1;
-    }
+    super.subscribe('newRound', this.reset);
+
+  }
+  set time(value) {
+    this.el.innerHTML = value;
+  }
+  start() {
+    this.timerId = setInterval(handler, 1000);
+    return timer;
+  }
+  end(id) {
+    clearInterval(id);
+  }
+  addTime(time) {
+    this.time += time;
+  }
+  reset() {
+    this.time = 60;
+  }
+  handler() {
+    this.time -= 1;
+  }
 }
 
-module.exports = clock;
+module.exports = Clock;
