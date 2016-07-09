@@ -4,30 +4,39 @@
  */
 
 'use strict';
-import Thing from '../api/thing/thing.model';
+import Entry from '../api/entry/entry.model';
 import User from '../api/user/user.model';
 
-Thing.find({}).remove()
+Entry.find({}).remove()
   .then(() => {
-    Thing.create({
-      name: '1',
-      info: '1'
+    Entry.create({
+      name: '词条1',
+      prompt: ['提示1','提示2','提示3'],
+      category: '类别1'
     }, {
       name: '2',
-      info: '2'
+      prompt: ['1','2','3'],
+      category: '2'
     }, {
       name: '3',
-      info: '3'
+      prompt: ['1','2','3'],
+      category: '3'
     }, {
       name: '4',
-      info: '4'
+      prompt: ['1','2','3'],
+      category: '4'
     }, {
       name: '5',
-      info: '5'
+      prompt: ['1','2','3'],
+      category: '5'
     }, {
       name: '6',
-      info: '6'
-    });
+      prompt: ['1','2','3'],
+      category: '6'
+    })
+      .then(() => {
+        console.log('词条填充完成 (⊙o⊙)');
+      });
   });
 
 User.find({}).remove()

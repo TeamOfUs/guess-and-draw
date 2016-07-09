@@ -11,6 +11,8 @@ export default function(app) {
   // 下面插入路由
   app.use('/api/users', require('./api/user'));
 
+  app.use('/api/entrys', require('./api/entry'));
+
   app.use('/auth', require('./auth').default);
 
   // 未定义的资源或 API 路由返回 404
