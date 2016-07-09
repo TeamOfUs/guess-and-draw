@@ -4,5 +4,5 @@
 /coverage/
 /dist/
 /node_modules/
-/bower_components
-**/dist
+/bower_components/
+/server/config/local.env.js
