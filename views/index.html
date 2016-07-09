@@ -1,93 +1,68 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
-    <meta charset="UTF-8">
-    <title>你画我猜</title>
-    <link rel="stylesheet" href="../public/stylesheets/index-stylesheet.css" />
+  <meta charset="UTF-8">
+  <title>你画我猜</title>
+  <link rel="stylesheet" href="../public/stylesheets/index-stylesheet.css" />
 </head>
+
 <body>
-	<div class="display">
+  <div class="display">
+    <div class="player">
+    <div class="label-icon"></div>
+    <div class="label-mark">
+<!--      <div class="place"></div>-->
+<!--      <div class="mark"></div>-->
+    </div>
 
-		<div class="label-icon">头像</div>
-		<div class="label-mark">
-			<div class="place">名次</div>
-			<div class="mark">分数</div>
-		</div>
-
-		<div class="label-icon">头像1</div>
-		<div class="label-mark">
-			<div class="place">名次1</div>
-			<div class="mark">分数1</div>
-		</div>
-
-			<div class="label-icon">头像</div>
-		<div class="label-mark">
-			<div class="place">名次</div>
-			<div class="mark">分数</div>
-		</div>
-
-		<div class="label-icon">头像1</div>
-		<div class="label-mark">
-			<div class="place">名次1</div>
-			<div class="mark">分数1</div>
-		</div>
-
-			<div class="label-icon">头像</div>
-		<div class="label-mark">
-			<div class="place">名次</div>
-			<div class="mark">分数</div>
-		</div>
-
-		<div class="label-icon">头像1</div>
-		<div class="label-mark">
-			<div class="place">名次1</div>
-			<div class="mark">分数1</div>
-		</div>
-
-			<div class="label-icon">头像</div>
-		<div class="label-mark">
-			<div class="place">名次</div>
-			<div class="mark">分数</div>
-		</div>
-
-		<div class="label-icon">头像1</div>
-		<div class="label-mark">
-			<div class="place">名次1</div>
-			<div class="mark">分数1</div>
-		</div>
-
-		
-	</div>
-
-	<div class="canvas">
-		<div class="canvas-title">
-			<button type="button" class="button-forgo-type">放弃</button>
-		</div>
-		<div class="canvas-time"></div>	
-		<div class="canvas-tools">
-			<button type="button" class="button-color-type">颜色</button>
-			<button type="button" class="button-color-type">颜色</button>
-			<button type="button" class="button-color-type">颜色</button>
-			<button type="button" class="button-color-type">颜色</button>
-			<button type="button" class="button-color-type">颜色</button>
-			<button type="button" class="button-color-type">颜色</button>
-			<button type="button" class="button-color-type">颜色</button>
-			<button type="button" class="button-color-type">颜色</button>
-			<button type="button" class="button-color-type">颜色</button>
-			<button type="button" class="button-color-type">颜色</button>
+    </div>
 
 
-			<button type="button" class="button-pen-type">笔头</button>
-			<button type="button" class="button-pen-type">笔头</button>
-			<button type="button" class="button-pen-type">笔头</button>
-			<button type="button" class="button-pen-type">笔头</button>
-			<button type="button" class="button-pen-type">笔头</button>
+  </div>
 
-			<button type="button" class="button-clear-type">清空</button>
-		</div>
-	</div>
+  <div class="canvas">
+    <div class="canvas-head">
+      <span class="canvas-title">321321322222222221321</span>
+      <button type="button" class="button-forgo-type">我不会画</button>
+    </div>
+    <div class="canvas-time"></div>
+    <canvas id="panel" width="800px" height="600px">不支持Canvas,请使用高级浏览器。</canvas>
+    <div class="canvas-tools">
+      <button id="red" type="button" class="button-color-type"></button>
+      <button id="orange" type="button" class="button-color-type"></button>
+      <button id="yellow" type="button" class="button-color-type"></button>
+      <button id="green" type="button" class="button-color-type"></button>
+      <button id="cyan" type="button" class="button-color-type"></button>
+      <button id="blue" type="button" class="button-color-type"></button>
+      <button id="purple" type="button" class="button-color-type"></button>
+      <button id="black" type="button" class="button-color-type"></button>
+      <button id="white" type="button" class="button-color-type"></button>
+      <div id="x1" class="div-pen-type">
+        <button id="x1-width" type="button" class="button-pen-type"></button>
+      </div>
+      <div id="x2" class="div-pen-type">
+        <button id="x4-width" type="button" class="button-pen-type"></button>
+      </div>
+      <div id="x8" class="div-pen-type">
+        <button id="x8-width" type="button" class="button-pen-type"></button>
+      </div>
+      <div id="x16" class="div-pen-type">
+        <button id="x16-width" type="button" class="button-pen-type"></button>
+      </div>
 
-	<div class="chat"></div>
-    <script src="../public/scripts/dist/main.js"></script>
+
+      <button type="button" class="button-clear-type">Clear</button>
+    </div>
+  </div>
+
+  <div class="chat">
+    <ul id="chatList">
+    </ul>
+    <input type="text" id="chatInput">
+    <button id="chatBtn">发送</button>
+  </div>
+  <script src="../public/scripts/dist/main.js"></script>
 </body>
+
 </html>
