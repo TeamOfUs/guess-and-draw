@@ -8,27 +8,23 @@
 </head>
 
 <body>
-  <div class="display">
+  <div id="display">
     <div class="player">
-    <div class="label-icon"></div>
-    <div class="label-mark">
-<!--      <div class="place"></div>-->
-<!--      <div class="mark"></div>-->
+      <div class="label-icon"></div>
+      <div class="label-mark"></div>
     </div>
-
-    </div>
-
-
   </div>
 
   <div class="canvas">
-    <div class="canvas-head">
-      <span class="canvas-title">321321322222222221321</span>
+    <div id="canvas-head">
+      <span id="canvas-title">321321322222222221321</span>
       <button type="button" class="button-forgo-type">我不会画</button>
     </div>
-    <div class="canvas-time"></div>
+    <div id="canvas-time">
+      <span id="clock">60</span>
+    </div>
     <canvas id="panel" width="800px" height="600px">不支持Canvas,请使用高级浏览器。</canvas>
-    <div class="canvas-tools">
+    <div id="canvas-tools">
       <button id="red" type="button" class="button-color-type"></button>
       <button id="orange" type="button" class="button-color-type"></button>
       <button id="yellow" type="button" class="button-color-type"></button>
@@ -39,30 +35,30 @@
       <button id="black" type="button" class="button-color-type"></button>
       <button id="white" type="button" class="button-color-type"></button>
       <div id="x1" class="div-pen-type">
-        <button id="x1-width" type="button" class="button-pen-type"></button>
+        <div id="x1-width" class="button-pen-type"></div>
       </div>
       <div id="x2" class="div-pen-type">
-        <button id="x4-width" type="button" class="button-pen-type"></button>
+        <div id="x4-width" class="button-pen-type"></div>
       </div>
       <div id="x8" class="div-pen-type">
-        <button id="x8-width" type="button" class="button-pen-type"></button>
+        <div id="x8-width" class="button-pen-type"></div>
       </div>
       <div id="x16" class="div-pen-type">
-        <button id="x16-width" type="button" class="button-pen-type"></button>
+        <div id="x16-width" class="button-pen-type"></div>
       </div>
-
-
       <button type="button" class="button-clear-type">Clear</button>
     </div>
   </div>
 
-  <div class="chat">
+  <div id="chat">
     <ul id="chatList">
     </ul>
     <input type="text" id="chatInput">
     <button id="chatBtn">发送</button>
   </div>
-  <script src="../public/scripts/dist/main.js"></script>
+
+  <audio src="../public/audios/ok.wav"></audio>
+  <script src="../public/scripts/dist/game-script.js"></script>
 </body>
 
 </html>

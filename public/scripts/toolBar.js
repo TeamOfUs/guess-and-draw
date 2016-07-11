@@ -13,23 +13,26 @@ class ToolBar extends Component {
     let id = e.target.getAttribute("id");
     switch (id) {
       case 'red':
-      case 'blue':
+      case 'orange':
       case 'yellow':
       case 'green':
+      case 'cyan':
+      case 'blue':
+      case 'purple':
       case 'black':
       case 'white':
         super.broadcast('setColor',id);
         break;
-      case '1x-width':
+      case 'x1':
         super.broadcast('setWidth',1);
         break;
-      case '4x-width':
+      case 'x2':
         super.broadcast('setWidth',4);
         break;
-      case '8x-widht':
+      case 'x8':
         super.broadcast('setWidth',8);
         break;
-      case '32x-width':
+      case 'x16':
         super.broadcast('setWidth',32);
         break;
       default:

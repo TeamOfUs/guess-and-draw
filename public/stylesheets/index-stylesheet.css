@@ -15,7 +15,7 @@ body {
 
 /*left*/
 
-.display {
+#display {
   height: 100%;
   width: 10%;
   float: left;
@@ -74,20 +74,29 @@ canvas {
   width: 800px;
   margin: 5% auto;
   border: 1px solid black;
+  background-color: white;
 }
 
-.canvas-head {
+#canvas-head {
   width: 30%;
   height: 5%;
   position: relative;
   left: 30%;
-  top: 10px;
+  top: 50px;
   display: inline-block;
   text-align: center;
   border: 1px solid black;
+      background-color: white;
+}
+#clock{
+  position: relative;
+  color: red;
+  font-size: 30px;
+  top:15px;
+  left:20px;
 }
 
-.canvas-title {
+#canvas-title {
   position: relative;
   top: 20%;
   display: inline-block;
@@ -103,7 +112,7 @@ canvas {
   margin-left: 110%;
 }
 
-.canvas-time {
+#canvas-time {
   width: 70px;
   height: 70px;
   position: relative;
@@ -112,9 +121,10 @@ canvas {
   border-radius: 50%;
   display: inline-block;
   border: 1px solid black;
+    background-color: white;
 }
 
-.canvas-tools {
+#canvas-tools {
   /*  padding: 0 50px;*/
   width: 780px;
   height: 5%;
@@ -129,16 +139,15 @@ canvas {
 }
 
 .button-pen-type {
-  border: 0;
+  border: 1px;
   background-color: black;
-  /*  margin: 10px;*/
   border-radius: 50%;
 }
 
 .button-clear-type {
   width: 50px;
   height: 30px;
-  margin-left: 40px;
+  margin-left: 5px;
   vertical-align: text-bottom;
 }
 
@@ -187,37 +196,38 @@ canvas {
   display: inline-block;
   width: 30px;
   height: 30px;
+  border: 1px solid black;
+  margin-left: 10px;
 }
 
-.div-pen-type button {
+.div-pen-type div {
   position: absolute;
 }
 
 #x1-width {
-  width: 4px;
-  height: 4px;
-  left: 50%;
-  top: 50%;
+  width: 5px;
+  height: 5px;
+  left: 45%;
+  top: 45%;
 }
 
 #x4-width {
   width: 8px;
   height: 8px;
-  left: 45%;
-  top: 45%;
+  left: 40%;
+  top: 40%;
 }
 
 #x8-width {
   width: 16px;
   height: 16px;
-  left: 50%;
-  top: 30%;
+  left: 25%;
+  top: 25%;
 }
 
 #x16-width {
   width: 30px;
   height: 30px;
-  left: 50%;
 }
 
 
@@ -229,8 +239,8 @@ canvas {
 
 /*chatPanel;*/
 
-.chat {
-  background-color: forestgreen;
+#chat {
+  background-color: white;
   position: relative;
   height: 100%;
   width: 20%;

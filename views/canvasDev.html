@@ -17,6 +17,22 @@
       height: 30px;
       background-color: red;
     }
+    #a{
+      width: 300px;
+      height: 200px;
+      background-color: red;
+    }
+    #b{
+      width: 200px;
+      height: 200px;
+      background-color: blue;
+
+    }
+    #c{
+      width: 100px;
+      height: 100px;
+      background-color: yellow;
+    }
   </style>
 </head>
 
@@ -34,11 +50,21 @@
   <div id="toolBar">
     <button id="red"></button>
     <button id="1x-width"></button>
-    <button id="32x-width"></button>
+  </div>
 
+  <div id="a">
+    <div id="b">
+      <div id="c"></div>
+    </div>
   </div>
   <script src="../public/scripts/dist/game-script.js"></script>
+<script>
+  var a = document.getElementById('a');
+  a.addEventListener('click',function(e){
+    console.log(e.target);
+  });
 
+  </script>
 </body>
 
 </html>

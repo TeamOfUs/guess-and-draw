@@ -12,14 +12,14 @@
 
   window.controller = new Controller();
 
-//  new Audio();
-//  new Clock('clock');
-  new ChatPanel('chatPanel');
-//  new NameBar();
+  new Audio();
+  new Clock('clock');
+  new ChatPanel('chat');
+  new NameBar('canvas-head');
   new Panel('panel');
-  new PlayersPanel();
+  new PlayersPanel('display');
   new Socket();
-  new ToolBar('toolBar');
+  new ToolBar('canvas-tools');
 
   //todo list --
   //    在Canvas的外层监听moouseup ;触发panel的mouseup

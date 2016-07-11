@@ -18,15 +18,14 @@ class Panel extends Component {
     super.subscribe('receiveEndDraw', this.remoteEndDraw);
     super.subscribe('setColor', this.setColor);
     super.subscribe('setWidth', this.setWidth);
-
   }
   handleDown(e) {
     if (!this.drawer) {
       return
     }
     this.drawing = true;
-    this.x = e.pageX - e.target.offsetLeft;
-    this.y = e.pageY - e.target.offsetTop;
+    this.x = e.offsetX;
+    this.y = e.offsetY;
     this.ctx.moveTo(this.x, this.y);
     this.ctx.beginPath();
     super.broadcast('startDraw', {
@@ -38,7 +37,8 @@ class Panel extends Component {
     if (!this.drawer) {
       return
     }
-    this.stopDrawing();
+    this.drawing = false;
+    this.ctx.closePath();
     super.broadcast('endDraw');
   }
   handleMove(e) {
@@ -48,8 +48,8 @@ class Panel extends Component {
     if (!this.drawing) {
       return;
     }
-    this.x = Math.floor(e.pageX - e.target.offsetLeft);
-    this.y = Math.floor(e.pageY - e.target.offsetTop);
+    this.x = e.offsetX;
+    this.y = e.offsetY;
     this.ctx.lineTo(this.x, this.y);
     this.ctx.stroke();
     super.broadcast('draw', {
@@ -59,33 +59,29 @@ class Panel extends Component {
       width: this.ctx.lineWidth
     });
   }
-  stopDrawing() {
-    this.drawing = false;
-    this.ctx.closePath();
-  }
   remoteStartDraw(data) {
     this.ctx.moveTo(data.x, data.y);
     this.ctx.beginPath();
   }
   remoteDraw(data) {
-    this.ctx.strokeStyle = data.color;
     this.ctx.lineWidth = data.width;
+    this.ctx.strokeStyle = data.color;
     this.ctx.lineTo(data.x, data.y);
     this.ctx.stroke();
   }
   remoteEndDraw() {
     this.ctx.closePath();
   }
+  setColor(color){
+    this.ctx.strokeStyle = color;
+  }
+  setWidth(width){
+    this.ctx.lineWidth = width;
+  }
   addListener() {
     this.el.addEventListener("mousedown", event => this.handleDown(event));
     this.el.addEventListener("mouseup", event => this.handleUp(event));
     this.el.addEventListener("mousemove", event => this.handleMove(event));
-  }
-  setColor(color) {
-    this.ctx.strokeStyle = color;
-  }
-  setWidth(width) {
-    this.ctx.lineWidth = width;
   }
 }
 

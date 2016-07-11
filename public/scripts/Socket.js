@@ -22,7 +22,7 @@ class Socket {
   on() {
     this.io.on('startDraw', (data) => controller.broadcast('receiveStartDraw', data));
     this.io.on('draw', (data) => controller.broadcast('receiveDraw', data));
-    this.io.on('endDraw', (data) => controller.broadcast('receiveEndDraw'));
+    this.io.on('endDraw', () => controller.broadcast('receiveEndDraw'));
     this.io.on('msg', (data) => controller.broadcast('receiveMsg', data));
     this.io.on('correct', (data) => controller.broadcast('correct'));
     this.io.on('newWord', (data) => controller.broadcast('newWord', data));

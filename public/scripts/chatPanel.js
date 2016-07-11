@@ -15,7 +15,7 @@ class ChatPanel extends Component{
         let tagName = e.target.tagName;
         switch(tagName){
             case 'BUTTON':
-                let msg = document.getElementById("text").value;
+                let msg = this.el.children[1].value;
                 this.sendMsg(msg);
                 break;
             case 'nameTag':

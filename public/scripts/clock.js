@@ -3,7 +3,7 @@ const Component = require('./Component');
 class Clock extends Component {
   constructor(dom) {
     super();
-    this.el = document.getElementById('clock');
+    this.el = document.getElementById(dom);
     this.time = 60;
     this.timerId = null;
 
