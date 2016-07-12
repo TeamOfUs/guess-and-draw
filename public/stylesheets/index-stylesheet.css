@@ -9,7 +9,7 @@ body {
   min-height: 860px;
   min-width: 1366px;
   height: 100%;
-  background-color: bisque;
+  background-color: #deab8a;;
 }
 
 
@@ -230,7 +230,7 @@ canvas {
 /*chatPanel;*/
 
 .chat {
-  background-color: forestgreen;
+  background-color: #deab8a;
   position: relative;
   height: 100%;
   width: 20%;
@@ -240,7 +240,7 @@ canvas {
 
 #chatInput {
   position: absolute;
-  bottom: 10px;
+  bottom: 40px;
   left: 20px;
   width: 60%;
   height: 30px;
@@ -248,7 +248,7 @@ canvas {
 
 #chatBtn {
   position: absolute;
-  bottom: 10px;
+  bottom: 40px;
   right: 30px;
   width: 20%;
   height: 35px;
