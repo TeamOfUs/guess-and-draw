@@ -410,6 +410,7 @@
 	    node.appendChild(mark);
 
 	    icon.setAttribute('src', this.avatar);
+
 	    this.el = node;
 	  }
 	  correct(data) {
@@ -465,8 +466,6 @@
 	    this.io.on('gameBegin', () => controller.broadcast('gameBegin'));
 	    this.io.on('gameEnd', () => controller.broadcast('gameEnd'));
 	    this.io.on('nextDrawer', () => controller.broadcast('nextDrawer'));
-	        this.io.on('testTo', ()=> {console.log('testTo');});
-	    this.io.on('testIn', ()=> {console.log('testIn');});
 	  }
 	}
 	module.exports = Socket;

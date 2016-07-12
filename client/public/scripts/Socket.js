@@ -1,7 +1,7 @@
 const io = require('socket.io-client')('http://localhost:8081');
 
 class Socket {
-  constructor() {
+  construcInr() {
     this.io = io;
     this.on();
 
@@ -30,8 +30,8 @@ class Socket {
     this.io.on('gameBegin', () => controller.broadcast('gameBegin'));
     this.io.on('gameEnd', () => controller.broadcast('gameEnd'));
     this.io.on('nextDrawer', () => controller.broadcast('nextDrawer'));
-        this.io.on('testTo', ()=> {console.log('testTo');});
-    this.io.on('testIn', ()=> {console.log('testIn');});
+
+
   }
 }
 module.exports = Socket;

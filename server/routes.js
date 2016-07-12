@@ -22,6 +22,6 @@ export default function(app) {
   // 其它路由重定向到 index.html
   app.route('/*')
     .get((req, res) => {
-      res.sendFile(path.resolve(app.get('appPath') + '/index.html'));
+      res.sendFile(path.resolve(app.get('appPath') + '/views/index.html'));
     });
 }

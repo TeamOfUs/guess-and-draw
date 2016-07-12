@@ -14,11 +14,11 @@ import http from 'http';
 mongoose.connect(config.mongo.uri, config.mongo.options);
 mongoose.connection.on('error', function(err) {
   console.error('MongoDB 连接错误：' + err);
-  process.exit(-1);
+//  process.exit(-1);
 });
 
 // 使用样本数据填充 DB
-if (config.seedDB) { require('./config/seed'); }
+//if (config.seedDB) { require('./config/seed'); }
 
 // 启动 server
 var app = express();

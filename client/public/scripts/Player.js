@@ -13,17 +13,14 @@ class Player extends Component {
   drawPlayer(id, avatar) {
     let node = document.createElement('div'),
       icon = document.createElement('div'),
-      mark = document.createElement('div'),
-      name = document.createElement('div');
+      mark = document.createElement('div');
     node.classList.addClass('player');
     icon.classList.addClass('label-icon');
     mark.classList.addClass('label-mark');
     node.appendChild(icon);
     node.appendChild(mark);
-    node.appendChild(name);
 
     icon.setAttribute('src', this.avatar);
-    name.innerHTML = this.id;
 
     this.el = node;
   }

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <title>你画我猜</title>
+  <style>
+    canvas {
+      width: 800px;
+      height: 600px;
+      border: 1px solid black;
+      margin: 100px;
+    }
+
+    button {
+      width: 30px;
+      height: 30px;
+      background-color: red;
+    }
+    #a{
+      width: 300px;
+      height: 200px;
+      background-color: red;
+    }
+    #b{
+      width: 200px;
+      height: 200px;
+      background-color: blue;
+
+    }
+    #c{
+      width: 100px;
+      height: 100px;
+      background-color: yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="chatPanel">
+    <ul id="chat">
+      <li>test</li>
+    </ul>
+    <button id='sub'>sub</button>
+    <input id='text' type="text">
+  </div>
+
+  <canvas id="panel" width='800px' height='600x'>NO CANVAS</canvas>
+
+  <div id="toolBar">
+    <button id="red"></button>
+    <button id="1x-width"></button>
+  </div>
+
+  <div id="a">
+    <div id="b">
+      <div id="c"></div>
+    </div>
+  </div>
+  <script src="../public/scripts/dist/game-script.js"></script>
+<script>
+  var a = document.getElementById('a');
+  a.addEventListener('click',function(e){
+    console.log(e.target);
+  });
+
+  </script>
+</body>
+
+</html>

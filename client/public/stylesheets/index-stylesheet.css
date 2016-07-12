@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  /*  font-family: "Microsoft YaHei";*/
+}
+
+html,
+body {
+  min-height: 860px;
+  min-width: 1366px;
+  height: 100%;
+  background-color: bisque;
+}
+
+
+/*left*/
+
+#display {
+  height: 100%;
+  width: 10%;
+  float: left;
+}
+.player{
+  padding: 5%;
+  margin: 30px auto;
+
+}
+.label-icon {
+  background-color: white;
+  width: 65px;
+  height: 65px;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.label-mark {
+  background-color: white;
+  margin-top: 10px;
+  display: inline-block;
+  height: 49px;
+  width: 49px;
+}
+
+/*
+.place {
+  background-color: white;
+  width: 50%;
+  height: 5%;
+}
+*/
+
+.mark {
+  background-color: white;
+  margin-top: 50%;
+  width: 50%;
+  height: 5%;
+}
+
+
+/*left*/
+
+
+/*mid*/
+
+.canvas {
+  position: relative;
+  height: 100%;
+  width: 70%;
+  float: left;
+}
+
+canvas {
+  display: block;
+  width: 800px;
+  margin: 5% auto;
+  border: 1px solid black;
+  background-color: white;
+}
+
+#canvas-head {
+  width: 30%;
+  height: 5%;
+  position: relative;
+  left: 30%;
+  top: 50px;
+  display: inline-block;
+  text-align: center;
+  border: 1px solid black;
+      background-color: white;
+}
+#clock{
+  position: relative;
+  color: red;
+  font-size: 30px;
+  top:15px;
+  left:20px;
+}
+
+#canvas-title {
+  position: relative;
+  top: 20%;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.button-forgo-type {
+  position: relative;
+  bottom: 30%;
+  width: 100px;
+  height: 30px;
+  margin-right: 10px;
+  margin-left: 110%;
+}
+
+#canvas-time {
+  width: 70px;
+  height: 70px;
+  position: relative;
+  top: 30px;
+  left: 44%;
+  border-radius: 50%;
+  display: inline-block;
+  border: 1px solid black;
+    background-color: white;
+}
+
+#canvas-tools {
+  /*  padding: 0 50px;*/
+  width: 780px;
+  height: 5%;
+  margin: 10px auto;
+}
+
+.button-color-type {
+  width: 30px;
+  height: 30px;
+  margin: 10px 10px;
+  border: 0;
+}
+
+.button-pen-type {
+  border: 1px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.button-clear-type {
+  width: 50px;
+  height: 30px;
+  margin-left: 5px;
+  vertical-align: text-bottom;
+}
+
+
+/*pen btns*/
+
+#red {
+  background-color: red;
+}
+
+#orange {
+  background-color: orange;
+}
+
+#yellow {
+  background-color: yellow;
+}
+
+#green {
+  background-color: green;
+}
+
+#cyan {
+  background-color: cyan;
+}
+
+#blue {
+  background-color: blue;
+}
+
+#purple {
+  background-color: purple;
+}
+
+#black {
+  background-color: black;
+}
+
+#white {
+  background-color: white;
+  border: 1px solid black;
+}
+
+.div-pen-type {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+  margin-left: 10px;
+}
+
+.div-pen-type div {
+  position: absolute;
+}
+
+#x1-width {
+  width: 5px;
+  height: 5px;
+  left: 45%;
+  top: 45%;
+}
+
+#x4-width {
+  width: 8px;
+  height: 8px;
+  left: 40%;
+  top: 40%;
+}
+
+#x8-width {
+  width: 16px;
+  height: 16px;
+  left: 25%;
+  top: 25%;
+}
+
+#x16-width {
+  width: 30px;
+  height: 30px;
+}
+
+
+/*pen btns*/
+
+
+/*mid*/
+
+
+/*chatPanel;*/
+
+#chat {
+  background-color: white;
+  position: relative;
+  height: 100%;
+  width: 20%;
+  min-width: 229px;
+  float: left;
+}
+
+#chatInput {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  width: 60%;
+  height: 30px;
+}
+
+#chatBtn {
+  position: absolute;
+  bottom: 10px;
+  right: 30px;
+  width: 20%;
+  height: 35px;
+}
+
+#chatList {
+  padding: 20px;
+  list-style: none;
+  height: 90%;
+  overflow-y: scroll;
+  word-wrap: break-word;
+}

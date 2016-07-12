@@ -6,7 +6,7 @@ module.exports = {
 
   // MongoDB 连接选项
   mongo: {
-    uri: 'mongodb://localhost/guess-and-draw-dev'
+    uri: 'mongodb://115.28.81.27/guess-and-draw-dev'
   },
 
   // 在服务启动时使用样本数据填充 DB
