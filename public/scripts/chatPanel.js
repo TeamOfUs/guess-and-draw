@@ -26,7 +26,10 @@ class ChatPanel extends Component{
         }
     }
     sendMsg(msg){
-		super.broadcast('msg',msg);
+      if(msg === '准备'){
+        super.broadcast('ready');
+      }
+      super.broadcast('msg',msg);
 	}
     receiveMsg(msg){
 		let node = document.createElement('li');

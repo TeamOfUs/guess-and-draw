@@ -30,8 +30,8 @@ class Socket {
     this.io.on('gameBegin', () => controller.broadcast('gameBegin'));
     this.io.on('gameEnd', () => controller.broadcast('gameEnd'));
     this.io.on('nextDrawer', () => controller.broadcast('nextDrawer'));
-        this.io.on('testTo', ()=> {console.log('testTo');});
-    this.io.on('testIn', ()=> {console.log('testIn');});
+    this.io.on('startGame', ()=> {alert('开始游戏')});
+    this.io.on('endGame', (data)=>{alert('游戏结束'); alert(data)});
   }
 }
 module.exports = Socket;

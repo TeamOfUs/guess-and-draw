@@ -15,6 +15,11 @@ export default function(app) {
 
   app.use('/auth', require('./auth').default);
 
+  app.route('/room/:roomid')
+      .get((req, res) => {
+      res.sendFile(path.resolve(app.get('appPath') + '/views/index.html'));
+    });
+
   // 未定义的资源或 API 路由返回 404
   app.route('/:url(api|auth|components|app|bower_components|assets)/*')
     .get(errors[404]);

@@ -1,3 +1,4 @@
 module.exports = {
-  getPlayers:"url"
+  getPlayers:"url",
+  getInfo:"url"
 }

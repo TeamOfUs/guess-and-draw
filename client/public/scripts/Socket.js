@@ -1,7 +1,7 @@
 const io = require('socket.io-client')('http://localhost:8081');
 
 class Socket {
-  construcInr() {
+  constructor() {
     this.io = io;
     this.on();
 
@@ -30,8 +30,8 @@ class Socket {
     this.io.on('gameBegin', () => controller.broadcast('gameBegin'));
     this.io.on('gameEnd', () => controller.broadcast('gameEnd'));
     this.io.on('nextDrawer', () => controller.broadcast('nextDrawer'));
-
-
+    this.io.on('startGame', ()=> {alert('开始游戏')});
+    this.io.on('endGame', (data)=>{alert('游戏结束'); alert(data)});
   }
 }
 module.exports = Socket;

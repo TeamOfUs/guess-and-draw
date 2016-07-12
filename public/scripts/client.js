@@ -12,6 +12,8 @@
 
   window.controller = new Controller();
 
+
+
   new Audio();
   new Clock('clock');
   new ChatPanel('chat');

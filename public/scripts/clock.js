@@ -7,8 +7,7 @@ class Clock extends Component {
     this.time = 60;
     this.timerId = null;
 
-    super.subscribe('newRound', this.reset);
-
+    super.subscribe('nextRound', this.reset);
   }
   set time(value) {
     this.el.innerHTML = value;

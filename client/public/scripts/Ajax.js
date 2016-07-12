@@ -1,6 +1,6 @@
 class Ajax {
   constructor(methon, url, data = null) {
-    let promise = new Promise(() => (resolve, reject) {
+    let promise = new Promise((resolve, reject) => {
       let xhr = new XMLHttpRequest();
       xhr.open(methon, url);
       xhr.onreadystatechange = this.handler;

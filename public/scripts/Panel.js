@@ -13,11 +13,17 @@ class Panel extends Component {
     this.ctx.lineWidth = 1;
     this.addListener();
 
+    super.subscribe('nextDrawer', this.drawer);
     super.subscribe('receiveStartDraw', this.remoteStartDraw);
     super.subscribe('receiveDraw', this.remoteDraw);
     super.subscribe('receiveEndDraw', this.remoteEndDraw);
     super.subscribe('setColor', this.setColor);
     super.subscribe('setWidth', this.setWidth);
+  }
+  drawer(id){
+    if(cookies.get('id') === id){
+      this.drawer = true;
+    }
   }
   handleDown(e) {
     if (!this.drawer) {

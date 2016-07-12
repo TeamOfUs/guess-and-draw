@@ -7,10 +7,11 @@ class NameBar extends Component {
     this.word = '';
     this.addListenner();
 
-    super.subscribe('newWord', this.getWord);
+    super.subscribe('nextWord', this.getWord);
+    super.subscribe('nextTip', this.getTip);
   }
   set word(word) {
-    this.el.children[0].innerHTML = word;
+    this.el.children[0].innerHTML += word;
   }
   addListenner() {
     this.el.children[1].addEventListener('click', event => this.clickHandler);
@@ -20,6 +21,9 @@ class NameBar extends Component {
   }
   getWord(word){
     this.word = word;
+  }
+  getTip(tip){
+    this.word = tip;
   }
 }
 
