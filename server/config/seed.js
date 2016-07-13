@@ -43,9 +43,29 @@ User.find({}).remove()
   .then(() => {
     User.create({
       provider: 'local',
-      name: 'llissery',
+      name: '李愿愿',
       email: 'llissery@gmail.com',
-      password: 'llissery'
+      password: 'password'
+    }, {
+      provider: 'local',
+      name: '陈旭礼',
+      email: 'cxl@gmail.com',
+      password: 'password'
+    }, {
+      provider: 'local',
+      name: '徐再贤',
+      email: 'xzx@gmail.com',
+      password: 'password'
+    }, {
+      provider: 'local',
+      name: '陈武亮',
+      email: 'cwl@gmail.com',
+      password: 'password'
+    }, {
+      provider: 'local',
+      name: '王晓斌',
+      email: 'wxb@gmail.com',
+      password: 'password'
     }, {
       provider: 'local',
       role: 'admin',
