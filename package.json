@@ -45,6 +45,7 @@
     "gulp-less": "^3.1.0",
     "gulp-util": "^3.0.7",
     "path": "^0.12.7",
+    "socket.io-cookie": "^0.0.1",
     "supertest": "^1.2.0",
     "webpack": "^1.13.1",
     "wrench": "^1.5.9"

@@ -1,5 +1,6 @@
 'use strict'
 var io = require('socket.io')();
+var cookieParser = require('socket.io-cookie');
 let rooms = {};
 let words = [
   {
@@ -15,6 +16,8 @@ let words = [
   }
 ];
 
+io.use(cookieParser);
+
 io.on('connection', function (socket) {
   let url = socket.request.headers.referer,
     splited = url.split('/'),
@@ -22,7 +25,7 @@ io.on('connection', function (socket) {
     cookie = socket.request.headers.cookie;
   //cookie 获取id
   console.log(cookie);
-  console.log(cookie.id);
+  console.log(cookie['_ga']);
 
   if (!rooms[roomID]) {
     rooms[roomID] = new Game(roomID);
