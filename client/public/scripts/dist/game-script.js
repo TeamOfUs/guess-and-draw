@@ -58,6 +58,8 @@
 
 	  window.controller = new Controller();
 
+
+
 	  new Audio();
 	  new Clock('clock');
 	  new ChatPanel('chat');
@@ -501,6 +503,7 @@
 	    this.subscribe('newWord');
 	    this.subscribe('giveUp');
 	    this.subscribe('correct');
+	    this.subscribe('ready');
 	  }
 	  receive(topic, data = null) {
 	    this.io.emit(topic, data);

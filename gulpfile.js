@@ -44,7 +44,7 @@ gulp.task('webpack', function (cb) {
     var config = {
         entry: "./public/scripts/client.js",
         output: {
-            path: "./public/scripts/dist",
+            path: "./client/public/scripts/dist",
             filename: "game-script.js"
         }
     };

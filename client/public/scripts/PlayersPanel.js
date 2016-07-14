@@ -7,7 +7,7 @@ class PlayersPanel extends Component {
     super();
     this.el = document.getElementById(dom);
 
-    super.subscribe('getPlayers',this.initPlayers);
+    super.subscribe('players',this.initPlayers);
   }
   initPlayers(data) {
     data.forEach((player)=>{
